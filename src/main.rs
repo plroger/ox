@@ -49,7 +49,7 @@ macro_rules! log {
         let file = OpenOptions::new()
             .create(true)
             .append(true)
-            .open("%USERPROFILE%/temp/ox.log");
+            .open("$HOME/temp/ox.log");
         if let Ok(mut log) = file {
             writeln!(log, "{}: {}", $type, $msg).unwrap();
         } else {
